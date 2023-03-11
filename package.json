@@ -1,4 +1,8 @@
 {
+  "name": "kidcare-server",
+  "version": "1.0.0",
+  "description": "Nodejs backend for kidcare application",
+  "main": "App.js",
   "dependencies": {
     "@azure/ai-form-recognizer": "^4.0.0",
     "axios": "^1.3.4",
