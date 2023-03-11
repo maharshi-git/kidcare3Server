@@ -13,16 +13,18 @@ app.use(cors());
 
 var jsonParser = bodyParser.json({limit: '5mb'})
 
-const allowedOrigins = ['http://localhost:3001', 'https://kidcare.azurewebsites.net/'];
-app.use(cors({
-  origin: function (origin, callback) {
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+// const allowedOrigins = ['http://localhost:3001', 'https://kidcare.azurewebsites.net/'];
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   }
+// }));
+
+app.use(cors())
 
 app.get('/', (req,res) => {
   res.send("Hello");
