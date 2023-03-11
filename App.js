@@ -13,7 +13,7 @@ app.use(cors());
 
 var jsonParser = bodyParser.json({limit: '5mb'})
 
-const allowedOrigins = ['http://localhost:3001', 'https://example.com'];
+const allowedOrigins = ['http://localhost:3001', 'https://kidcare.azurewebsites.net/'];
 app.use(cors({
   origin: function (origin, callback) {
     if (allowedOrigins.includes(origin)) {
@@ -24,6 +24,9 @@ app.use(cors({
   }
 }));
 
+app.get('/', (req,res) => {
+  res.send("Hello");
+})
 
 //setup post method for express
 app.post('/upldVaccData', jsonParser, async (req, res) => {
